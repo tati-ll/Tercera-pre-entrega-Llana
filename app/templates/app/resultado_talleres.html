@@ -1,0 +1,22 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<br>
+<h2>Resultados de la búsqueda:</h2>
+<br>
+<form method="post">
+    {% csrf_token %}
+    <label for="busqueda">Término de búsqueda:</label>
+    <input type="text" name="busqueda" id="busqueda" value="{{ busqueda }}">
+    <button type="submit">Buscar</button>
+</form>
+<ul>
+    {% for taller in talleres %}
+        <li>{{ taller.nombre }} - Profesor: {{ taller.profesor }} - Fecha: {{ taller.fecha }} - Cupos disponibles: {{ taller.cupos }}</li>
+    {% empty %}
+        <li>No se encontraron talleres con el término de búsqueda.</li>
+    {% endfor %}
+</ul>
+
+{% endblock contenido %}

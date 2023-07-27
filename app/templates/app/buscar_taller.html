@@ -1,0 +1,16 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<br>
+<h1>Buscar Talleres</h1>
+<a href="{% url 'lista_talleres' %}">Volver a la lista</a>
+<form method="post">
+    {% csrf_token %}
+    <label for="busqueda">Busca un taller por nombre:</label>
+    <input type="text" name="busqueda" id="busqueda" value="{{ request.POST.busqueda }}">
+    <button type="submit">Buscar</button>
+    <br>
+</form>
+<br>
+{% endblock contenido %}
