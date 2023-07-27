@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<br>
+<h1>Lista de materiales para usar en los talleres:</h1>
+<a href="{% url 'crear_material' %}">Ingresar nuevo material</a>
+<br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Marca</th>
+          <th scope="col">Color</th>
+          <th scope="col">Composición</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for material in object_list %}
+        <tr>
+          <td>{{ material.id }}</td>
+          <td>{{ material.nombre }}</td>
+          <td>{{ material.marca }}</td>
+          <td>{{ material.color }}</td>
+          <td>{{ material.composicion }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+
+{% endblock contenido %}

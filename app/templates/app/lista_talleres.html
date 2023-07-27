@@ -1,0 +1,37 @@
+{% extends 'base.html' %}
+{% load static %}
+
+{% block contenido %}
+<br>
+<h1>Lista de talleres</h1>
+<a href="{% url 'crear_taller' %}">Crear nuevo taller</a>
+<br>
+
+<table class="table table-striped">
+    <thead>
+        <tr>
+          <th scope="col">ID</th>
+          <th scope="col">Nombre</th>
+          <th scope="col">Profesor/a</th>
+          <th scope="col">Fecha</th>
+          <th scope="col">Cupos</th>
+          <th scope="col">Descripción</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for taller in object_list %}
+        <tr>
+          <td>{{ taller.id }}</td>
+          <td>{{ taller.nombre }}</td>
+          <td>{{ taller.profesor }}</td>
+          <td>{{ taller.fecha }}</td>
+          <td>{{ taller.cupos }}</td>
+          <td>{{ taller.descripcion }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+<br>
+<br>
+
+{% endblock contenido %}

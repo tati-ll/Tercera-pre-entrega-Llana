@@ -1,0 +1,16 @@
+{% extends "base.html" %}
+
+{% block contenido %}
+<br>
+
+<form method="post">
+  {% csrf_token %}
+  {{ form.as_p }}
+  <input type="submit" value="Ingresar nuevo material" />
+</form>
+
+<br>
+<a href="{% url 'lista_materiales' %}">Volver a la lista</a>
+<br>
+
+{% endblock contenido %}
