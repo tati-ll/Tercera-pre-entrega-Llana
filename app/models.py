@@ -3,7 +3,7 @@ from django.db import models
 class Taller(models.Model):
     nombre = models.CharField(max_length=256)
     profesor = models.CharField(max_length=256)
-    fecha = models.DateField(blank=False)
+    fecha = models.DateField(blank=False) 
     descripcion = models.TextField(blank=True)
     cupos = models.IntegerField(default=5)
 
