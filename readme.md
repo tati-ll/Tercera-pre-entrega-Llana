@@ -10,11 +10,11 @@ Proyecto: página web de talleres de tejido, con las siguientes funcionalidades:
 - Segunda opción, descargar la carpeta contenedora de los archivos de este proyecto. Luego abre la carpeta en tu editor de código.
 - Instalar Django, o verifica que ya está instalado en tu computador. Verifica que estés en la carpeta correcta y puedes utlizar los siguentes comandos en la terminal:
 Para instalar Django:
-'''json
+'''
 pip install Django
 '''
 Para verificar si ya tienes Django instalado, y ver qué versión tienes instalada:
-'''json 
+'''
 django-admin --version
 '''
 #### Panel administrativo:
